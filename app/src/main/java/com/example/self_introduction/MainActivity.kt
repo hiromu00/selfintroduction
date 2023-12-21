@@ -42,8 +42,9 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
+
 @Composable
-fun MainContent(){
+fun MainContent() {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier.padding(20.dp)
@@ -87,6 +88,7 @@ fun MainContent(){
 
         Spacer(modifier = Modifier.height(10.dp))
 
+        var isShowDetail = false
         Button(
             modifier = Modifier.fillMaxWidth(),
             colors = ButtonDefaults.buttonColors(
@@ -94,7 +96,7 @@ fun MainContent(){
                     0xFFF85F6A
                 )
             ),
-            onClick = { /*TODO*/ },
+            onClick = { isShowDetail = !isShowDetail },
         ) {
             Text(
                 text = "詳細を表示",
@@ -105,7 +107,9 @@ fun MainContent(){
 
         Spacer(modifier = Modifier.height(10.dp))
 
-        DetailSection()
+        if (isShowDetail) {
+            DetailSection()
+        }
     }
 }
 
