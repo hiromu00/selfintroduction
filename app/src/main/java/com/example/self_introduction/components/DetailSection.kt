@@ -31,7 +31,7 @@ fun DetailSection() {
 
         Label(
             icon = Icons.Default.LocationOn,
-            text = "住所：東京都志茂",
+            text = "住所：サモナーズリフト",
             color = Color.Gray,
         )
     }
